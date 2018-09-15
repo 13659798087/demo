@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="../css/css.css" />
+<link href="../Content/bootstrap.min.css" rel="stylesheet" />
+<link href="../Content/jquery.fileupload.css" rel="stylesheet" />
+<link href="../Content/jquery.validate.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script src="../js/jquery-3.2.0.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<form id="content_form" name="content_form" action="/demo/save"
+		method="post">
+		<div style="display: none">
+			<input type="text" id="Id" name="Id" th:value="${project.Id}" />
+		</div>
+		<div class="form-horizontal"
+			style="border:2px solid #D4D4D4;margin:0px auto;padding:20px 20px 0;width:800px;">
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="txName">项目名称：</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="Name" name="Name"
+						th:value="${project.Name}" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="txtDescription">项目描述：</label>
+				<div class="col-sm-4">
+					<textarea class="form-control" id="Description" name="Description"
+						maxlength="200" th:text="${project.Description}"></textarea>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div style="text-align:center;padding:10px">
+		<button class="btn btn-primary" onclick="OnSave()">提交</button>
+		<button type="button" onclick="javascript:history.go(-1)"
+			class="btn btn-default">返回</button>
+	</div>
+
+</body>
+</html>
+<script>
+	function OnSave() {
+		$("#content_form").submit();
+	}
+</script>
