@@ -30,6 +30,8 @@ public class ApplicationController {
 			userServices.updatePsw(u.getUserId(),des.encode(u.getPassword()));
 		}
 		return "数据库密码加密成功";
+
+
 	}
 
 	/*@RequestMapping("/")
