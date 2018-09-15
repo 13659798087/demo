@@ -29,7 +29,7 @@ public class ApplicationController {
 			EncryptUtil des = new EncryptUtil(secretKey, "utf-8");
 			userServices.updatePsw(u.getUserId(),des.encode(u.getPassword()));
 		}
-		return "数据库密码加密成功";
+		return "数据库密码加密成功啦";
 
 
 	}
